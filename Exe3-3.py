@@ -11,3 +11,7 @@ request.add_header('Content-Type', 'text/html')
 f = urlopen(request)
 response = f.read()
 print(response)
+
+f = urlopen(request)
+response = f.read()
+print(response)
