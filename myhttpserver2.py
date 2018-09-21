@@ -13,6 +13,10 @@ class MyHTTPRequestHandler(BaseHTTPRequestHandler):
         qs = self.path[self.path.find('?')+1:]
         params = parse_qs(qs)
         values = params.get(name)
+        #params와 values의 값을 확인
+        print(type(values), type(params))
+        print(values, params)
+
 
         return "" if values is None else values.pop()
         #같은 의미의 구문.
