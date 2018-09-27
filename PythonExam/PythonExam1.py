@@ -9,17 +9,23 @@ original = 	'''<html>
 </html>
 '''
 
-list = original.splitlines()
-print(list)
-index = len(list)
+plist = original.splitlines()
+#print(plist)
+index = len(plist)
+
 while index != 0:
-    str = list[len(list)-index]
-    str1 =""
+    str = plist[len(plist)-index]
+    str1 = ""
+
     if str.find('<') == -1:
         str1 = str
     else:
         str1 += str[:str.find('<')]
         str2 = str[str.find('>')+1:]
         str1 += str2[:str2.find('<')]
-    print(str1)
-    index-=1
+        str1 = str1.strip(" " "\t")
+
+    if str1 != "":
+        print(str1)
+
+    index -= 1
